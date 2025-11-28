@@ -17,6 +17,8 @@ const dropdownLinks = [
   { name: "Blogs", href: "/blogs" },
   { name: "Testimonials", href: "/testimonials" },
   { name: "FAQ", href: "/faq" },
+  { name: "Team Members", href: "/team" },
+  { name: "Courses", href: "/courses" },
 ];
 
 const Navbar = () => {

@@ -35,11 +35,12 @@ const ContactPage = () => {
             Brief us on your next release or summit.
           </h1>
           <p className="text-lg text-gray-600 md:w-3/4">
-            Tell us where you are in your roadmap. We’ll assemble a pod within 48 hours and align on what success
-            looks like before we scope.
+            Tell us where you are in your roadmap. We’ll assemble a pod within 48 hours and
+            align on what success looks like before we scope.
           </p>
         </header>
 
+        {/* MAIN GRID */}
         <div className="grid gap-8 rounded-[32px] border border-gray-200 bg-neutral-50/70 p-8 shadow-sm md:grid-cols-[1fr,1.2fr]">
           <div className="space-y-8">
             <div>
@@ -59,8 +60,12 @@ const ContactPage = () => {
                     })()}
                   </div>
                   <div>
-                    <p className="text-xs uppercase tracking-[0.3em] text-gray-400">{channel.label}</p>
-                    <p className={`${montserrat.className} text-base text-gray-900`}>{channel.value}</p>
+                    <p className="text-xs uppercase tracking-[0.3em] text-gray-400">
+                      {channel.label}
+                    </p>
+                    <p className={`${montserrat.className} text-base text-gray-900`}>
+                      {channel.value}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -72,6 +77,7 @@ const ContactPage = () => {
             </div>
           </div>
 
+          {/* FORM */}
           <form className="space-y-6">
             <div className="grid gap-4 sm:grid-cols-2">
               <label className="space-y-2 text-sm text-gray-600">
@@ -117,6 +123,17 @@ const ContactPage = () => {
               Send request
             </button>
           </form>
+        </div>
+
+        {/* MAP SECTION */}
+        <div className="overflow-hidden rounded-3xl border border-gray-200 shadow-sm">
+          <iframe
+            title="Our Studios"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.4475489228076!2d-79.383934!3d43.653226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34d34bdf3c6f%3A0x1c8b5a1f8c6c4c3!2sToronto!5e0!3m2!1sen!2sca!4v1700000000000"
+            className="h-[420px] w-full"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
       </div>
     </section>
