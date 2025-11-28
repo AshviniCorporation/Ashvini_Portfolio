@@ -6,10 +6,8 @@ import {
   Facebook, 
   ArrowUpRight, 
   Mail, 
-  MapPin 
 } from 'lucide-react';
 
-// NOTE: Replace these classes with your actual font variables (e.g., montserrat.className)
 const FONTS = {
   heading: "font-sans font-bold", // placeholder for montserrat
   mono: "font-mono",              // placeholder for googlesanscode
@@ -36,7 +34,7 @@ const Footer = () => {
               Start a Project
             </p>
             <h3 className={`${FONTS.heading} text-3xl sm:text-4xl lg:text-5xl leading-tight text-white`}>
-              Let's create something <br className="hidden sm:block" />
+              Let&apos;s create something <br className="hidden sm:block" />
               <span className="opacity-90">extraordinary together.</span>
             </h3>
           </div>
