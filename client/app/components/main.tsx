@@ -33,7 +33,7 @@ const Main = () => {
           </div>
 
           <div className={`${outfit.className} mt-10 sm:mt-16 lg:mt-24`}>
-            <button className="bg-white text-black px-6 py-3 sm:px-8 sm:py-3 text-sm sm:text-base font-semibold rounded-full hover:bg-gray-200 transition-colors duration-300">
+            <button className="bg-white text-black px-6 py-3 sm:px-8 sm:py-3 text-sm sm:text-base rounded-full hover:bg-gray-200 transition-colors duration-300">
               CONNECT WITH US
             </button>
           </div>

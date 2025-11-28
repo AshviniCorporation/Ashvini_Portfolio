@@ -1,4 +1,5 @@
 import Main from "./components/main";
+import TrustedBy from "./components/TrustedBy";
 import Intro from "./components/ui/intro";
 import Speciality from "./components/ui/speciality";
 
@@ -8,6 +9,7 @@ export default function Home() {
       <Main />
       <Intro />
       <Speciality />
+      <TrustedBy />
     </div>
   );
 }

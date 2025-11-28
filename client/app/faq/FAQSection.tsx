@@ -1,8 +1,8 @@
 "use client";
+import { Dot } from "lucide-react"
 
 import React, { useCallback, useState } from "react";
-
-// --- Types ---
+import { montserrat, outfit } from "../fonts/font";
 
 interface FAQItemData {
   question: string;
@@ -22,8 +22,6 @@ interface FAQItemProps {
   isOpen: boolean;
   onToggle: (id: string) => void;
 }
-
-// --- Data ---
 
 const faqData: FAQCategoryData[] = [
   {
@@ -109,20 +107,18 @@ const faqData: FAQCategoryData[] = [
   },
 ];
 
-// --- Components ---
-
 const FAQItem: React.FC<FAQItemProps> = React.memo(
   ({ id, question, answer, isOpen, onToggle }) => {
     const contentId = `${id}-content`;
 
     return (
       <div
-        className={`border-b border-gray-200 overflow-hidden transition-colors duration-200 ${
-          isOpen ? "bg-blue-50/60 rounded-xl" : "bg-transparent"
+        className={`border-b border-gray-200 overflow-hidden ${outfit.className} transition-colors duration-200 ${
+          isOpen ? "bg-purple-100 rounded-xl" : "bg-transparent"
         }`}
       >
         <button
-          className="w-full flex justify-between items-center py-4 px-4 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+          className="w-full flex justify-between items-center py-4 px-4 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
           onClick={() => onToggle(id)}
           aria-expanded={isOpen}
           aria-controls={contentId}
@@ -130,7 +126,7 @@ const FAQItem: React.FC<FAQItemProps> = React.memo(
         >
           <span
             className={`text-base md:text-lg font-medium transition-colors duration-150 ${
-              isOpen ? "text-blue-600" : "text-gray-900"
+              isOpen ? "text-purple-600" : "text-gray-900"
             }`}
           >
             {question}
@@ -139,7 +135,7 @@ const FAQItem: React.FC<FAQItemProps> = React.memo(
           <span
             className={`ml-4 inline-flex h-7 w-7 items-center justify-center rounded-full border text-sm font-semibold transition-transform duration-200 ${
               isOpen
-                ? "rotate-45 border-blue-500 text-blue-600 bg-white"
+                ? "rotate-45 border-purple-500 text-purple-400 bg-white"
                 : "border-gray-300 text-gray-500 bg-gray-50"
             }`}
             aria-hidden="true"
@@ -148,7 +144,6 @@ const FAQItem: React.FC<FAQItemProps> = React.memo(
           </span>
         </button>
 
-        {/* Smooth accordion using CSS grid instead of max-height (less layout thrash) */}
         <div
           id={contentId}
           className={`px-4 pt-0 pr-4 pl-4 transition-[grid-template-rows,opacity] duration-200 ease-out ${
@@ -177,19 +172,29 @@ const FAQSection: React.FC = () => {
     setActiveId((prev) => (prev === id ? null : id));
   }, []);
 
+  const highlightLastWord = (text: string) => {
+    const words = text.split(" ");
+    const lastWord = words.pop();
+    return (
+      <>
+        {words.join(" ") + " "}
+        <span className="text-purple-500">{lastWord}</span>
+      </>
+    );
+  };
+
   return (
     <section className="max-w-6xl mx-auto px-6 py-16 md:py-20 font-sans">
-      <div className="text-center mb-12 md:mb-16">
-        <p className="inline-flex items-center rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-blue-600 mb-3">
-          Need help?
-        </p>
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+      <div
+        className={`${montserrat.className} text-center mb-12 md:mb-16 bg-purple-500 rounded-2xl p-8 text-white`}
+      >
+        <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">
           Frequently Asked Questions
         </h1>
-        <p className="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
-          Find quick answers about how we work, the tools we use, and what you
-          can expect when partnering with us.
-        </p>
+        <div className="text-gray-300 max-w-2xl mx-auto text-sm md:text-base flex justify-center">
+          <Dot size={24} color="white" />
+          Ashvini Corporation.
+        </div>
       </div>
 
       <div className="space-y-14 md:space-y-16">
@@ -198,17 +203,17 @@ const FAQSection: React.FC = () => {
             key={cat.category}
             className="grid md:grid-cols-12 gap-8 md:gap-10 items-start"
           >
-            {/* Left Column: Category Info */}
             <div className="md:col-span-4 space-y-3">
-              <h2 className="text-xl md:text-2xl font-semibold text-gray-900">
-                {cat.category}
+              <h2
+                className={`${montserrat.className} text-xl md:text-4xl font-semibold text-gray-900`}
+              >
+                {highlightLastWord(cat.category)}
               </h2>
               <p className="text-sm md:text-base text-gray-500 leading-relaxed">
                 {cat.description}
               </p>
             </div>
 
-            {/* Right Column: Questions List */}
             <div className="md:col-span-8">
               <div className="bg-white rounded-2xl shadow-sm ring-1 ring-gray-100 divide-y divide-gray-100">
                 {cat.items.map((item, itemIndex) => {

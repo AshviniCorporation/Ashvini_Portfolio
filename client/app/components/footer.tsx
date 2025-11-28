@@ -23,7 +23,7 @@ const Footer = () => {
   return (
     <footer className="w-full bg-white pt-12 relative">
       {/* Main Container: Slate-950 background with the rounded-t look from both examples */}
-      <div className="bg-slate-950 text-slate-100 w-full rounded-t-[2.5rem] sm:rounded-t-[4rem] px-6 sm:px-10 lg:px-16 pt-16 pb-8 flex flex-col overflow-hidden relative">
+      <div className="bg-black text-slate-100 w-full rounded-t-[2.5rem] sm:rounded-t-[4rem] px-6 sm:px-10 lg:px-16 pt-16 pb-8 flex flex-col overflow-hidden relative">
         
         {/* --- SECTION 1: THE HYBRID CTA PILL --- */}
         {/* Structure from Ex 1 (Floating Pill), Aesthetic from Ex 2 (Big text, White button) */}
@@ -33,7 +33,7 @@ const Footer = () => {
             <p className={`${FONTS.mono} text-pink-200 text-xs sm:text-sm uppercase tracking-[0.25em] mb-4`}>
               Start a Project
             </p>
-            <h3 className={`${FONTS.heading} text-3xl sm:text-4xl lg:text-5xl leading-tight text-white`}>
+            <h3 className={`${FONTS.heading} text-2xl sm:text-2xl lg:text-4xl leading-tight text-white`}>
               Let&apos;s create something <br className="hidden sm:block" />
               <span className="opacity-90">extraordinary together.</span>
             </h3>
