@@ -23,14 +23,14 @@ const Footer = () => {
   return (
     <footer className="w-full bg-white pt-12 relative">
       {/* Main Container: Slate-950 background with the rounded-t look from both examples */}
-      <div className="bg-black text-slate-100 w-full rounded-t-[2.5rem] sm:rounded-t-[4rem] px-6 sm:px-10 lg:px-16 pt-16 pb-8 flex flex-col overflow-hidden relative">
+      <div className="bg-black text-slate-100 w-full rounded-t-[2.5rem] sm:rounded-t-[4rem] px-6 sm:px-10 lg:px-16 pt-16 flex flex-col overflow-hidden relative">
         
         {/* --- SECTION 1: THE HYBRID CTA PILL --- */}
         {/* Structure from Ex 1 (Floating Pill), Aesthetic from Ex 2 (Big text, White button) */}
-        <div className={`relative z-20 ${brandPurple} rounded-3xl md:rounded-[3rem] px-8 py-10 md:p-12 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 shadow-2xl mx-auto w-full max-w-7xl transform -translate-y-4 hover:-translate-y-5 transition-transform duration-500 ease-out`}>
+        <div className={`relative z-20 ${brandPurple} rounded-3xl md:rounded-[3rem] px-8 md:p-8 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 shadow-2xl mx-auto w-full max-w-7xl transform -translate-y-4 hover:-translate-y-5 transition-transform duration-500 ease-out`}>
           
           <div className="max-w-2xl">
-            <p className={`${FONTS.mono} text-pink-200 text-xs sm:text-sm uppercase tracking-[0.25em] mb-4`}>
+            <p className={`${FONTS.mono} text-pink-200 text-xs sm:text-sm uppercase tracking-[0.25em] m-4`}>
               Start a Project
             </p>
             <h3 className={`${FONTS.heading} text-2xl sm:text-2xl lg:text-4xl leading-tight text-white`}>
@@ -39,7 +39,7 @@ const Footer = () => {
             </h3>
           </div>
 
-          <button className="group bg-white text-[#961767] px-8 py-4 rounded-full inline-flex items-center gap-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95">
+          <button className="group bg-white text-[#961767] px-8 m-3 rounded-full inline-flex items-center gap-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 py-5">
             <span className={`${FONTS.heading} text-lg`}>Contact Us</span>
             <ArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:rotate-45 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </button>
@@ -47,12 +47,12 @@ const Footer = () => {
 
         {/* --- SECTION 2: LINKS & INFO GRID --- */}
         {/* Layout from Ex 1 (Columns), Styling from Ex 2 (Clean, mono headers) */}
-        <div className="relative z-20 mt-16 grid grid-cols-1 md:grid-cols-12 gap-12 border-t border-white/10 pt-16">
+        <div className="relative z-20 mt-10 grid grid-cols-1 md:grid-cols-12 gap-12 border-t border-white/10 pt-10">
           
           {/* Brand Column (Span 4) */}
           <div className="md:col-span-5 lg:col-span-4 space-y-6">
             <h4 className={`${FONTS.heading} text-2xl`}>Ashvini.</h4>
-            <p className={`${FONTS.body} text-slate-400 text-base leading-relaxed max-w-sm`}>
+            <p className={`${FONTS.body} text-slate-300 text-base leading-relaxed max-w-sm`}>
               Crafting premium digital experiences that blend aesthetics, strategy, and performance. Seamless solutions for a complex world.
             </p>
             
@@ -71,11 +71,11 @@ const Footer = () => {
             
             {/* Column 1 */}
             <div>
-              <h5 className={`${FONTS.mono} text-slate-500 text-xs uppercase tracking-[0.2em] mb-6`}>Venture</h5>
+              <h5 className={`${FONTS.mono} text-slate-500 text-xs uppercase tracking-[0.2em]`}>Venture</h5>
               <ul className="space-y-4">
                 {['Our Story', 'Approach', 'Partners', 'Careers'].map((link) => (
                   <li key={link}>
-                    <a href="#" className={`${FONTS.body} text-slate-300 hover:text-white transition-colors flex items-center gap-1 group w-fit`}>
+                    <a href="#" className={`${FONTS.body} text-slate-200 hover:text-white transition-colors flex items-center gap-1 group w-fit`}>
                       {link}
                       <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-[#961767]" />
                     </a>
@@ -86,7 +86,7 @@ const Footer = () => {
 
             {/* Column 2 */}
             <div>
-              <h5 className={`${FONTS.mono} text-slate-500 text-xs uppercase tracking-[0.2em] mb-6`}>Services</h5>
+              <h5 className={`${FONTS.mono} text-slate-500 text-xs uppercase tracking-[0.2em]`}>Services</h5>
               <ul className="space-y-4">
                 {['Web Design', 'Development', 'Branding', 'SEO'].map((link) => (
                   <li key={link}>
@@ -100,7 +100,7 @@ const Footer = () => {
 
             {/* Column 3 */}
             <div>
-              <h5 className={`${FONTS.mono} text-slate-500 text-xs uppercase tracking-[0.2em] mb-6`}>Socials</h5>
+              <h5 className={`${FONTS.mono} text-slate-500 text-xs uppercase tracking-[0.2em]`}>Socials</h5>
               <div className="flex flex-wrap gap-3">
                 {[
                   { icon: Facebook, label: "Facebook" },
@@ -124,7 +124,7 @@ const Footer = () => {
         </div>
 
         {/* --- SECTION 3: BOTTOM & WATERMARK --- */}
-        <div className="relative z-20 mt-20 border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="relative z-20 mt-20 border-t border-white/10 pt-4 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <p className={FONTS.mono}>
             © {currentYear} Ashvini Coorperate.
           </p>

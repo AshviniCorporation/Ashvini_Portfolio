@@ -23,9 +23,9 @@ const LatestTech = () => {
 
         {/* Image Content */}
         <div className="w-full lg:w-1/2">
-          <div className="relative rounded-2xl overflow-hidden shadow-xl transition-transform duration-500 hover:scale-[1.02]">
+          <div className="relative rounded-2xl overflow-hidden transition-transform duration-500 hover:scale-[1.02]">
             <Image
-              src="/images/latest_tech.jpg"
+              src="/images/latestTech.png"
               height={500}
               width={700}
               alt="Latest Technology and Development Platforms"

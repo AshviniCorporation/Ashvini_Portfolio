@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ashwini Corporate",
+  title: "Ashvini Corporate",
   description: "Software Solutions",
 };
 

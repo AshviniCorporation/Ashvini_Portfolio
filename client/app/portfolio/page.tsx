@@ -1,9 +1,17 @@
 import { portfolioData } from "@/data";
 import { montserrat, outfit } from "../fonts/font";
+import { Metadata } from "next";
 
 const uniqueCategories = Array.from(
   new Set(portfolioData.map((project) => project.category))
 );
+
+export const metadata: Metadata = {
+  title: "Portfolio | Ashvini Corp.",
+  description:
+    "Explore Ashvini Corp.'s diverse portfolio of case studies across regulated and global industries. Discover how we deliver purposeful systems that scale with your operators and customers.",
+}
+
 
 const PortfolioPage = () => {
   return (

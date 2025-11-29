@@ -1,5 +1,6 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import { montserrat, outfit } from "../fonts/font";
+import { Metadata } from "next";
 
 const contactChannels = [
   {
@@ -18,6 +19,12 @@ const contactChannels = [
     value: "Toronto · Singapore · Rotterdam · Kathmandu",
   },
 ];
+
+export const metadata: Metadata = {
+  title: "Contact Us | Ashvini Corp.",
+  description:
+    "Get in touch with Ashvini Corp. to discuss your next project, partnership, or any inquiries you may have. We're here to help you innovate and grow.",
+}
 
 const ContactPage = () => {
   return (
